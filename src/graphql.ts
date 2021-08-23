@@ -180,7 +180,7 @@ function executeField(
 ): any {
   const { variableValues: variables, contextValue, resolver } = execContext;
 
-  const fieldName = field.name.value;
+  const fieldName = field.alias?.value || field.name.value;
   const args = argumentsObjectFromField(field, variables);
 
   const info: ExecInfo = {
