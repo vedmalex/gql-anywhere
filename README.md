@@ -1,11 +1,12 @@
-# gql-anywhere
+# graphql-anywhere
 
-This is a fork of graphql-anywhere
+[![npm version](https://badge.fury.io/js/graphql-anywhere.svg)](https://badge.fury.io/js/graphql-anywhere)
+[![Build Status](https://travis-ci.org/apollographql/graphql-anywhere.svg?branch=master)](https://travis-ci.org/apollostack/graphql-anywhere)
 
 Run a GraphQL query anywhere, without a GraphQL server or a schema. Just pass in one resolver. Use it together with [graphql-tag](https://github.com/apollographql/graphql-tag).
 
 ```
-npm install gql-anywhere graphql-tag
+npm install graphql-anywhere graphql-tag
 ```
 
 I think there are a lot of potentially exciting use cases for a completely standalone and schema-less GraphQL execution engine. We use it in [Apollo Client](https://github.com/apollostack/apollo-client) to read data from a Redux store with GraphQL.
@@ -15,7 +16,7 @@ Let's come up with some more ideas - below are some use cases to get you started
 ## API
 
 ```js
-import graphql from 'gql-anywhere'
+import graphql from 'graphql-anywhere'
 
 graphql(resolver, document, rootValue?, context?, variables?, options?)
 ```
@@ -30,7 +31,7 @@ graphql(resolver, document, rootValue?, context?, variables?, options?)
 
 #### Options
 
-The last argument to the `graphql` function is a set of `gql-anywhere`-specific options.
+The last argument to the `graphql` function is a set of `graphql-anywhere`-specific options.
 
 - `resultMapper`: Transform field results after execution.
     - Signature is: `(resultFields, resultRoot) => any`
@@ -51,7 +52,7 @@ The last argument to the `graphql` function is a set of `gql-anywhere`-specific 
 See https://www.apollographql.com/docs/react/advanced/fragments.html for examples of how you might use these.
 
 ```js
-import { filter } from 'gql-anywhere'
+import { filter } from 'graphql-anywhere'
 
 filter(doc, data);
 ```
@@ -63,7 +64,7 @@ Filter `data` according to `doc`.
 
 
 ```js
-import { check } from 'gql-anywhere'
+import { check } from 'graphql-anywhere'
 
 check(doc, data);
 ```
@@ -74,7 +75,7 @@ check(doc, data);
 Check that `data` is of the form defined by the query or fragment. Throw an exception if not.
 
 ```js
-import { propType } from 'gql-anywhere'
+import { propType } from 'graphql-anywhere'
 
 X.propTypes = {
   foo: propType(doc),
@@ -104,7 +105,7 @@ If you come across a GraphQL feature not supported here, please file an issue.
 
 ```js
 import gql from 'graphql-tag';
-import graphql from 'gql-anywhere';
+import graphql from 'graphql-anywhere';
 
 // I don't need all this stuff!
 const gitHubAPIResponse = {
